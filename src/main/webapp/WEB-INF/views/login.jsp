@@ -4,6 +4,7 @@
     Author     : Student99
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -70,6 +71,11 @@
         <div class="container">
             <form action="" method="post">
                 <h2>Login</h2>
+                <c:if test="${param.error!=null}">
+                    <div style="color:red; font-weight:bold">
+                        Invalid Username or Password !
+                    </div>
+                </c:if>
                 <div class="input-group">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" required>
